@@ -28,3 +28,4 @@ Web based "hamming code error detection" program that I have created for "Comput
 </p>
 
 #### [Click Here to Go to the Website](http://hammingcode.eu5.org/)
+#### [More info about Hamming Code Error Detection]([http://hammingcode.eu5.org/](https://en.wikipedia.org/wiki/Hamming_code#:~:text=Hamming%20codes%20can%20detect%20one,number%20of%20bits%20in%20error.))
