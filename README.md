@@ -7,7 +7,7 @@ Web based "hamming code error detection" program that I have created for "Comput
 
 <br>
 
-<p float="left">
+<p float="center">
   <img src="https://github.com/ErdalNayir/Hamming-Code-Table/blob/main/photos/aboutMe.JPG" width="120" height="120" />
   <img src="https://github.com/ErdalNayir/Hamming-Code-Table/blob/main/photos/mainScreen.JPG" width="120" height="120"/> 
 </p>
