@@ -8,7 +8,7 @@ Web based "hamming code error detection" program that I have created for "Comput
 <br>
 
 <p float="left">
-  <img src="https://github.com/ErdalNayir/Hamming-Code-Table/blob/main/photos/aboutMe.JPG" width="480" height="240" />
+  <img src="https://github.com/ErdalNayir/Hamming-Code-Table/blob/main/photos/aboutMe.JPG" width="480" height="240" style="margin:10px"/>
   <img src="https://github.com/ErdalNayir/Hamming-Code-Table/blob/main/photos/mainScreen.JPG" width="480" height="240"/> 
 </p>
 </br>
