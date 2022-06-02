@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Hamming Code by Erdal NAYIR</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="alert alert-danger alert-dismissible fade show"
+      role="alert"
+      id="hidden"
+    >
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+      id="hiddenSuccess"
+    >
+      Table has been created successfully!
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div
+      class="alert alert-success alert-dismissible fade show"
+      role="alert"
+      id="hiddenSuccessDetected"
+    >
+      Manipulated bit has been detected successfully!
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div
+      class="alert alert-warning alert-dismissible fade show"
+      role="alert"
+      id="hiddenWarning"
+    >
+      There is a manipulated bit on the table. Please refresh the table
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <div id="panelContainer">
+        <img
+          id="profilePhoto"
+          class="panelItem"
+          src="ErdalNayirProfilePhoto.jfif"
+          alt="profile photo"
+          width="50px"
+          height="50px"
+        />
+
+        <div class="panelItem" id="author">Erdal NAYİR</div>
+        <div class="panelItem" id="schoolNum">19360859049</div>
+        <div class="panelItem" id="contact">Contact me !</div>
+        <div id="icons">
+          <a
+            href="https://github.com/ErdalNayir"
+            class="fa fa-github"
+            style="font-size: 36px"
+            id="github"
+            target="_blank"
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/erdal-nayir-9754281b1/"
+            class="fa fa-linkedin-square"
+            style="font-size: 36px"
+            id="linkedin"
+            target="_blank"
+          ></a>
+          <a
+            href="mailto: erdal4568@gmail.com"
+            class="fa fa-envelope"
+            style="font-size: 36px"
+            id="linkedin"
+            target="_blank"
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header">
+      <a href="#default" class="logo" id="logoPosition">Hamming Code</a>
+      <div class="header-right">
+        <button class="openbtn" onclick="openNav()">
+          &#9776;&nbsp;&nbsp; About Me
+        </button>
+      </div>
+    </div>
+
+    <div id="mainContainer" class="mainSection">
+      <table id="hammingCodeTable" cellpadding="10" cellspacing="0">
+        <tbody id="tableBody">
+          <tr class="tableHeader" id="tablePosition">
+            <td id="tablePosition0">Position Index</td>
+          </tr>
+          <tr class="tableHeader" id="tablePositionBits">
+            <td id="tablePositionBits0">Position Bits</td>
+          </tr>
+          <tr class="tableHeader" id="tableData">
+            <td id="tableItem0">Data Bits</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="info">
+        <div id="dataBitsInfo">Data Bits: 10100101</div>
+        <div id="controlBitsInfo">Control Bits: 1001</div>
+      </div>
+      <button
+        id="detectChangedButton"
+        onclick="DetectManipulated()"
+        class="buttonStyle"
+      >
+        Detect The Manipulated Bit
+      </button>
+      <button id="detectChangedButton" onclick="Refresh()" class="buttonStyle">
+        Refresh Table
+      </button>
+    </div>
+    <div id="startingContainer">
+      <p id="menuHeader">Hamming Code</p>
+      <div id="inputArea">
+        <label for="dataBits" id="label">Data Bits:</label>
+        <input
+          type="text"
+          id="dataBits"
+          name="dataBits"
+          placeholder="Type your data bits"
+          onfocus="Close()"
+        /><br /><br />
+        <button id="confirmValue" onClick="CreateHammingCode()">
+          Create Hamming Code
+        </button>
+      </div>
+    </div>
+    <div id="manipulationContainer">
+      <p id="qustion">Do you want to manipulate this bit?</p>
+      <button id="confirmYes" class="confirmation" onclick="ConfirmYes()">
+        Yes
+      </button>
+      <button id="confirmNo" class="confirmation" onclick="ConfirmNo()">
+        No
+      </button>
+    </div>
+    <div id="overlayBlur"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script src="hammingCode.js"></script>
+  <script src="sideNavPanel.js"></script>
+</html>
