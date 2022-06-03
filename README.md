@@ -27,5 +27,5 @@ Web based "hamming code error detection" program that I have created for "Comput
   <img src="https://github.com/ErdalNayir/Hamming-Code-Table/blob/main/photos/hmmngCd5detected.JPG" width="480" height="240"/ style="margin:100px"> 
 </p>
 
-#### [Click Here to Go to the Website](http://hammingcode.eu5.org/)
+#### [Click Here to Go to the Website](http://hmmngcode.freeoda.com/)
 #### [More info about Hamming Code Error Detection](https://en.wikipedia.org/wiki/Hamming_code#:~:text=Hamming%20codes%20can%20detect%20one,number%20of%20bits%20in%20error.)
